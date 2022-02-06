@@ -21,7 +21,7 @@ def hoare_sort():
             
         counter += 1
             
-    print(input_array)
+    print(" ".join(list(map(str,input_array))))
 
 if __name__ == "__main__":
     import doctest
