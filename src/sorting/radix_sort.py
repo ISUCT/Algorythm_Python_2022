@@ -42,11 +42,41 @@ Bucket 9: 98
 Sorted array:
 09, 12, 29, 32, 35, 45, 61, 67, 98
 """
+ 
+def radix_sort(str_list, rank):
+    Phase = 1
+    rang=10
+    for i in range(rank-1,-1,-1):
+        print('**********')
+        print(f'Phase {Phase}')
+        Bins = [[] for _ in range(10)]
+        for j in range(len(str_list)):
+            Bins[int(str_list[j][i])].append(str_list[j])
+        for j in range(10):
+            if len(Bins[j])==0:
+                print(f"Bucket {j}: empty")
+            else:
+                print(f'Bucket {j}: {", ".join(Bins[j])}')
+        p = 0
+        for j in range(10):
+            for k in range(len(Bins[j])):
+                str_list[p] = Bins[j][k]
+                p += 1
+        Phase += 1
+    return str_list
+
 def radix():
     n = int(input())
+    str_list = []
     for i in range(n):
-        arr = input()
-    print(arr)
+        str_list.append(input())
+    rank = len(str_list[0])
+    print("Initial array:")
+    print(", ".join(str_list))
+    str_list = radix_sort(str_list,rank)
+    print('**********')
+    print("Sorted array:")
+    print(", ".join(str_list))
 
 if __name__ == "__main__":
     import doctest
