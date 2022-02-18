@@ -11,10 +11,18 @@
 """
 
 def bubble_sort():
-    n = input()
-    inp_string = input()
-    str_lst = inp_string.split(" ")
-    print(str_lst)
+    n=int(input())
+    cou=0
+    mas=list(map(int,(input().split())))
+    for i in range(n-1):
+        for j in range(n-i-1):
+            if mas[j]>mas[j+1]:
+                mas[j], mas[j+1] = mas[j+1], mas[j]
+                cou+=1
+                print(" ".join(map(str,mas)))
+    if cou==0:
+        print(0)
+
 
 if __name__ == "__main__":
     import doctest
