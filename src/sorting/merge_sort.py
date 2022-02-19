@@ -31,18 +31,14 @@ def merge(A, B):
     res = []
     i = j = 0
     while i < len(A) and j < len(B):
-        if A[i] < B[j]:
+        if A[i] <= B[j]:
             res.append(A[i])
             i += 1
         else:
             res.append(B[j])
             j += 1
-    while i < len(A):
-        res.append(A[i])
-        i += 1
-    while j < len(B):
-        res.append(B[j])
-        j += 1
+    res += A[i:]
+    res += B[j:]
     return res
 
 def merge_sort(A, begin, end):
@@ -51,9 +47,9 @@ def merge_sort(A, begin, end):
     middle = int((begin + end) / 2)
     left = merge_sort(A, begin, middle)
     right = merge_sort(A, middle, end)
-    sort = merge(left, right)
-    print(begin + 1, end, sort[0], sort[-1])
-    return sort
+    merged = merge(left, right)
+    print(begin + 1, end, merged[0], merged[-1])
+    return merged
 
 def task_merge_sort():
     n = int(input())
