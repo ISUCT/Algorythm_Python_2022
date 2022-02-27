@@ -44,10 +44,34 @@ Sorted array:
 """
 def radix():
     n = int(input())
+    strings = []
     for i in range(n):
-        arr = input()
-    print(arr)
-
-if __name__ == "__main__":
+        strings.append(input())
+    rank = len(strings[0])
+    print('Initial array:')
+    print(', '.join(strings))
+    phase = 1
+    for i in range(rank - 1, -1, -1):
+        print('**********')
+        print('Phase', phase)
+        buckets = [[] for _ in range(10)]
+        for j in range(len(strings)):
+            buckets[int(strings[j][i])].append(strings[j])
+        for j in range(10):
+            if len(buckets[j]) == 0:
+                print('Bucket', str(j) + ': empty')
+            else:
+                print('Bucket', str(j) + ':', ', '.join(buckets[j]))
+        pos = 0
+        for j in range(10):
+            for k in range(len(buckets[j])):
+                strings[pos] = buckets[j][k]
+                pos += 1
+        phase += 1
+    print('**********')
+    print('Sorted array:')
+    print(', '.join(strings))
+    
+if __name__ == '__main__':
     import doctest
-    doctest.testmod(verbose=True)
+doctest.testmod(verbose=True)
