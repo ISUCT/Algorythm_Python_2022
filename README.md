@@ -1,4 +1,8 @@
 
+# Algorythm
+
+Kapralov Nikita
+
 ```shell
 pip install pipenv
 ```
