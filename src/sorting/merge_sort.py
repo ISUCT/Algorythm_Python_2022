@@ -1,29 +1,20 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join([\
-'1',\
-'1'\
-]))
+>>> sys.stdin = io.StringIO(chr(10).join(['1', 1']))
 >>> task_merge_sort()
 1
->>> sys.stdin = io.StringIO(chr(10).join([\
-'2',\
-'3 1',\
-]))
+>>> sys.stdin = io.StringIO(chr(10).join(['2', '3 1']))
 >>> task_merge_sort()
 1 2 1 3
 1 3
->>> sys.stdin = io.StringIO(chr(10).join([\
-'5',\
-'5 4 3 2 1',\
-]))
+>>> sys.stdin = io.StringIO(chr(10).join(['5', '5 4 3 2 1']))
 >>> task_merge_sort()
 1 2 4 5
 4 5 1 2
 3 5 1 3
 1 5 1 5
 1 2 3 4 5
->>> print(merge([2,3,4],[1,2,3]))
+>>> print(merge([2, 3, 4], [1, 2, 3]))
 [1, 2, 2, 3, 3, 4]
 '''
 

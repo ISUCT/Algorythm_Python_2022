@@ -1,21 +1,11 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join([\
-'3',\
-'101 80',\
-'305 90',\
-'200 14',\
-]))
+>>> sys.stdin = io.StringIO(chr(10).join(['3', '101 80', '305 90', '200 14']))
 >>> pair_sort()
 305 90
 101 80
 200 14
->>> sys.stdin = io.StringIO(chr(10).join([\
-'3',\
-'20 80',\
-'30 90',\
-'25 90',\
-]))
+>>> sys.stdin = io.StringIO(chr(10).join(['3', '20 80', '30 90', '25 90']))
 >>> pair_sort()
 25 90
 30 90

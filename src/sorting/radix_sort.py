@@ -1,16 +1,6 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join(['9',\
-'12',\
-'32',\
-'45',\
-'67',\
-'98',\
-'29',\
-'61',\
-'35',\
-'09',\
-]))
+>>> sys.stdin = io.StringIO(chr(10).join(['9', '12', '32', '45', '67', '98', '29', '61', '35', '09']))
 >>> radix()
 Initial array:
 12, 32, 45, 67, 98, 29, 61, 35, 09
@@ -46,7 +36,7 @@ Sorted array:
 def radix():
     n = int(input())
     strings = []
-    for i in range(n):
+    for _ in range(n):
         strings.append(input())
     rank = len(strings[0])
     print('Initial array:')

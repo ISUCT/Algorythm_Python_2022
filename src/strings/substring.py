@@ -1,6 +1,6 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join(['ababbababa','aba']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['ababbababa', 'aba']))
 >>> find_substring()
 0 5 7
 '''

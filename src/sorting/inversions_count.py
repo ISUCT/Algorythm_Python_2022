@@ -1,12 +1,12 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join(['1','1']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['1', '1']))
 >>> task_merge_sort_count()
 0
->>> sys.stdin = io.StringIO(chr(10).join(['2','3 1']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['2', '3 1']))
 >>> task_merge_sort_count()
 1
->>> sys.stdin = io.StringIO(chr(10).join(['5','5 4 3 2 1']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['5', '5 4 3 2 1']))
 >>> task_merge_sort_count()
 10
 '''
@@ -38,7 +38,7 @@ def merge_sort_count(A):
     return merged, inversions
 
 def task_merge_sort_count():
-    n = int(input())
+    _ = int(input())
     print(merge_sort_count(list(map(int, input().split())))[1])
 
 if __name__ == '__main__':

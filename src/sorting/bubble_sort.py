@@ -1,6 +1,6 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join(['4','4 3 2 1']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['4', '4 3 2 1']))
 >>> bubble_sort()
 3 4 2 1
 3 2 4 1

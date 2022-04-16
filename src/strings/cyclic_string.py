@@ -1,6 +1,6 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO('z')  # input
+>>> sys.stdin = io.StringIO('z')
 >>> cyclic_string()
 1
 '''
@@ -9,9 +9,9 @@ def find_prefs(string, length):
     prefs = [0] * length
     for i in range(length - 1):
         j = prefs[i]
-        while (j > 0) and (string[i + 1] != string[j]):
+        while j > 0 and string[i + 1] != string[j]:
             j = prefs[j - 1]
-        if (string[i + 1] == string[j]):
+        if string[i + 1] == string[j]:
             prefs[i + 1] = j + 1
         else:
             prefs[i + 1] = 0

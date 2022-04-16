@@ -1,9 +1,9 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO(chr(10).join(['a','b']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['a', 'b']))
 >>> cyclic_shift()
 -1
->>> sys.stdin = io.StringIO(chr(10).join(['zabcd','abcdz']))  # input
+>>> sys.stdin = io.StringIO(chr(10).join(['zabcd', 'abcdz']))
 >>> cyclic_shift()
 4
 '''

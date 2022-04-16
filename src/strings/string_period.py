@@ -1,12 +1,12 @@
 '''
 >>> import io, sys
->>> sys.stdin = io.StringIO('aaaaa')  # input
+>>> sys.stdin = io.StringIO('aaaaa')
 >>> string_period()
 5
->>> sys.stdin = io.StringIO('abcabcabc')  # input
+>>> sys.stdin = io.StringIO('abcabcabc')
 >>> string_period()
 3
->>> sys.stdin = io.StringIO('abab')  # input
+>>> sys.stdin = io.StringIO('abab')
 >>> string_period()
 2
 '''
@@ -16,9 +16,9 @@ def find_prefs(string, length):
     prefs[0] = 0
     for i in range(length - 1):
         j = prefs[i]
-        while (j > 0) and (string[i + 1] != string[j]):
+        while j > 0 and string[i + 1] != string[j]:
             j = prefs[j - 1]
-        if (string[i + 1] == string[j]):
+        if string[i + 1] == string[j]:
             prefs[i + 1] = j + 1
         else:
             prefs[i + 1] = 0
@@ -28,7 +28,7 @@ def find_period(string):
     length = len(string)
     prefs = find_prefs(string, length)
     result = length - prefs[length - 1]
-    if (length % result == 0):
+    if length % result == 0:
         return length // result
     return 1
 
